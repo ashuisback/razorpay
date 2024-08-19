@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CrT3ZJg8.css">
+</head>
+<body>
+    <!--Nav Bar-->
+    <nav class="bg-deepBlue">
+        <div class="relative w-[1080px] mx-auto flex items-center justify-between">
+            <!--logo-->
+            <a href="/" class="cursor-pointer py-7 pr-7">
+                <img 
+                src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTg5NiA0MDEiIGZvY3VzYWJsZT0iZmFsc2UiIGNsYXNzPSJjaGFrcmEtaWNvbiBjc3MtMXh5NjJsZiIgZmlsbD0nI2ZmZicgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjMzM5NUZGIiBkPSJNMTIyLjYzIDEwNS43bC0xNS43NSA1Ny45NyA5MC4xNS01OC4zLTU4Ljk2IDIxOS45OCA1OS44OC4wNUwyODUuMDUuNDgiPjwvcGF0aD48cGF0aCBkPSJNMjUuNiAyMzIuOTJMLjggMzI1LjRoMTIyLjczbDUwLjIyLTE4OC4xM0wyNS42IDIzMi45Mm00MjYuMzItODEuNDJjLTMgMTEuMTUtOC43OCAxOS4zNC0xNy40IDI0LjU3LTguNiA1LjIyLTIwLjY3IDcuODQtMzYuMjUgNy44NGgtNDkuNWwxNy4zOC02NC44aDQ5LjVjMTUuNTYgMCAyNi4yNSAyLjYgMzIuMDUgNy45IDUuOCA1LjMgNy4yIDEzLjQgNC4yMiAyNC42bTUxLjI1LTEuNGM2LjMtMjMuNCAzLjctNDEuNC03LjgyLTU0LTExLjUtMTIuNS0zMS42OC0xOC44LTYwLjQ4LTE4LjhIMzI0LjRsLTY2LjUgMjQ4LjFoNTMuNjdsMjYuOC0xMDBoMzUuMmM3LjkgMCAxNC4xMiAxLjMgMTguNjYgMy44IDQuNTUgMi42IDcuMjIgNy4xIDguMDQgMTMuNmw5LjU4IDgyLjZoNTcuNWwtOS4zMi03N2MtMS45LTE3LjItOS43Ny0yNy4zLTIzLjYtMzAuMyAxNy42My01LjEgMzIuNC0xMy42IDQ0LjMtMjUuNGE5Mi42IDkyLjYgMCAwIDAgMjQuNDQtNDIuNW0xMzAuNDYgODYuNGMtNC41IDE2LjgtMTEuNCAyOS41LTIwLjczIDM4LjQtOS4zNCA4LjktMjAuNSAxMy4zLTMzLjUyIDEzLjMtMTMuMjYgMC0yMi4yNS00LjMtMjctMTMtNC43Ni04LjctNC45Mi0yMS4zLS41LTM3LjggNC40Mi0xNi41IDExLjQ3LTI5LjQgMjEuMTctMzguNyA5LjctOS4zIDIxLjA0LTEzLjk1IDM0LjA2LTEzLjk1IDEzIDAgMjEuOSA0LjUgMjYuNCAxMy40MyA0LjYgOC45NyA0LjcgMjEuOC4yIDM4LjV6bTIzLjUyLTg3LjhsLTYuNzIgMjUuMWMtMi45LTktOC41My0xNi4yLTE2Ljg1LTIxLjYtOC4zNC01LjMtMTguNjYtOC0zMC45Ny04LTE1LjEgMC0yOS42IDMuOS00My41IDExLjctMTMuOSA3LjgtMjYuMSAxOC44LTM2LjUgMzMtMTAuNCAxNC4yLTE4IDMwLjMtMjIuOSA0OC40LTQuOCAxOC4yLTUuOCAzNC4xLTIuOSA0Ny45IDMgMTMuOSA5LjMgMjQuNSAxOSAzMS45IDkuOCA3LjUgMjIuMyAxMS4yIDM3LjYgMTEuMmE4Mi40IDgyLjQgMCAwIDAgMzUuMi03LjcgODIuMTEgODIuMTEgMCAwIDAgMjguNC0yMS4ybC03IDI2LjE2aDUxLjlMNzA5LjMgMTQ5aC01MnptMjM4LjY1IDBINzQ0Ljg3bC0xMC41NSAzOS40aDg3LjgybC0xMTYuMSAxMDAuMy05LjkyIDM3aDE1NS44bDEwLjU1LTM5LjRoLTk0LjFsMTE3Ljg4LTEwMS44bTE0Mi40IDUyYy00LjY3IDE3LjQtMTEuNiAzMC40OC0yMC43NSAzOS05LjE1IDguNi0yMC4yMyAxMi45LTMzLjI0IDEyLjktMjcuMiAwLTM2LjE0LTE3LjMtMjYuODYtNTEuOSA0LjYtMTcuMiAxMS41Ni0zMC4xMyAyMC44Ni0zOC44NCA5LjMtOC43NCAyMC41Ny0xMy4xIDMzLjgyLTEzLjEgMTMgMCAyMS43OCA0LjMzIDI2LjMgMTMuMDUgNC41MiA4LjcgNC40OCAyMS42Ny0uMTMgMzguODdtMzAuMzgtODAuODNjLTExLjk1LTcuNDQtMjcuMi0xMS4xNi00NS44LTExLjE2LTE4LjgzIDAtMzYuMjYgMy43LTUyLjMgMTEuMWExMTMuMDkgMTEzLjA5IDAgMCAwLTQxIDMyLjA2Yy0xMS4zIDEzLjktMTkuNDMgMzAuMi0yNC40MiA0OC44LTQuOSAxOC41My01LjUgMzQuOC0xLjcgNDguNzMgMy44IDEzLjkgMTEuOCAyNC42IDIzLjggMzIgMTIuMSA3LjQ2IDI3LjUgMTEuMTcgNDYuNCAxMS4xNyAxOC42IDAgMzUuOS0zLjc0IDUxLjgtMTEuMTggMTUuOS03LjQ4IDI5LjUtMTguMSA0MC44LTMyLjEgMTEuMy0xMy45NCAxOS40LTMwLjIgMjQuNC00OC44IDUtMTguNiA1LjYtMzQuODQgMS44LTQ4LjgtMy44LTEzLjktMTEuNy0yNC42LTIzLjYtMzIuMDVtMTg1LjEgNDAuOGwxMy4zLTQ4LjFjLTQuNS0yLjMtMTAuNC0zLjUtMTcuOC0zLjUtMTEuOSAwLTIzLjMgMi45NC0zNC4zIDguOS05LjQ2IDUuMDYtMTcuNSAxMi4yLTI0LjMgMjEuMTRsNi45LTI1LjktMTUuMDcuMDZoLTM3bC00Ny43IDE3Ni43aDUyLjYzbDI0Ljc1LTkyLjM3YzMuNi0xMy40MyAxMC4wOC0yNCAxOS40My0zMS41IDkuMy03LjUzIDIwLjktMTEuMyAzNC45LTExLjMgOC42IDAgMTYuNiAxLjk3IDI0LjIgNS45bTE0Ni41IDQxLjFjLTQuNSAxNi41LTExLjMgMjkuMS0yMC42IDM3LjgtOS4zIDguNzQtMjAuNSAxMy4xLTMzLjUgMTMuMXMtMjEuOS00LjQtMjYuNi0xMy4yYy00LjgtOC44NS00LjktMjEuNi0uNC0zOC4zNiA0LjUtMTYuNzUgMTEuNC0yOS42IDIwLjktMzguNSA5LjUtOC45NyAyMC43LTEzLjQ1IDMzLjctMTMuNDUgMTIuOCAwIDIxLjQgNC42IDI2IDEzLjkgNC42IDkuMyA0LjcgMjIuMi4yOCAzOC43bTM2LjgtODEuNGMtOS43NS03LjgtMjIuMi0xMS43LTM3LjMtMTEuNy0xMy4yMyAwLTI1Ljg0IDMtMzcuOCA5LjA2LTExLjk1IDYuMDUtMjEuNjUgMTQuMy0yOS4xIDI0Ljc0bC4xOC0xLjIgOC44My0yOC4xaC01MS40bC0xMy4xIDQ4LjktLjQgMS43LTU0IDIwMS40NGg1Mi43bDI3LjItMTAxLjRjMi43IDkuMDIgOC4yIDE2LjEgMTYuNiAyMS4yMiA4LjQgNS4xIDE4Ljc3IDcuNjMgMzEuMSA3LjYzIDE1LjMgMCAyOS45LTMuNyA0My43NS0xMS4xIDEzLjktNy40MiAyNS45LTE4LjEgMzYuMS0zMS45IDEwLjItMTMuOCAxNy43Ny0yOS44IDIyLjYtNDcuOSA0LjktMTguMTMgNS45LTM0LjMgMy4xLTQ4LjQ1LTIuODUtMTQuMTctOS4xNi0yNS4xNC0xOC45LTMyLjltMTc0LjY1IDgwLjY1Yy00LjUgMTYuNy0xMS40IDI5LjUtMjAuNyAzOC4zLTkuMyA4Ljg2LTIwLjUgMTMuMjctMzMuNSAxMy4yNy0xMy4zIDAtMjIuMy00LjMtMjctMTMtNC44LTguNy00LjktMjEuMy0uNS0zNy44IDQuNC0xNi41IDExLjQyLTI5LjQgMjEuMTItMzguNyA5LjctOS4zIDIxLjA1LTEzLjk0IDM0LjA3LTEzLjk0IDEzIDAgMjEuOCA0LjUgMjYuNCAxMy40IDQuNiA4LjkzIDQuNjMgMjEuNzYuMTUgMzguNXptMjMuNS04Ny44NWwtNi43MyAyNS4xYy0yLjktOS4wNS04LjUtMTYuMjUtMTYuOC0yMS42LTguNC01LjM0LTE4LjctOC0zMS04LTE1LjEgMC0yOS42OCAzLjktNDMuNiAxMS43LTEzLjkgNy44LTI2LjEgMTguNzQtMzYuNSAzMi45LTEwLjQgMTQuMTYtMTggMzAuMy0yMi45IDQ4LjQtNC44NSAxOC4xNy01LjggMzQuMS0yLjkgNDcuOTYgMi45MyAxMy44IDkuMjQgMjQuNDYgMTkgMzEuOSA5Ljc0IDcuNCAyMi4zIDExLjE0IDM3LjYgMTEuMTQgMTIuMyAwIDI0LjA1LTIuNTYgMzUuMi03LjdhODIuMyA4Mi4zIDAgMCAwIDI4LjMzLTIxLjIzbC03IDI2LjE4aDUxLjlsNDcuMzgtMTc2LjdoLTUxLjl6bTI2OS44Ny4wNmwuMDMtLjA1aC0zMS45Yy0xLjAyIDAtMS45Mi4wNS0yLjg1LjA3aC0xNi41NWwtOC41IDExLjgtMi4xIDIuOC0uOSAxLjQtNjcuMjUgOTMuNjgtMTMuOS0xMDkuN2gtNTUuMDhsMjcuOSAxNjYuNy02MS42IDg1LjNoNTQuOWwxNC45LTIxLjEzYy40Mi0uNjIuOC0xLjE0IDEuMy0xLjhsMTcuNC0yNC43LjUtLjcgNzcuOTMtMTEwLjUgNjUuNy05MyAuMS0uMDZoLS4wM3oiPjwvcGF0aD48L3N2Zz4="
+                width="125px"
+                height="30px">
+            </a>
+
+            <ul class="flex space-x-6">
+                <li class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200
+                relative group">
+                <a href="#">Payments</a>
+                <div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200"></div>
+            </li>
+            <li class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200
+            relative group">
+            <a href="#">Banking</a>
+            <div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200"></div>
+        </li>
+        <li class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200
+        relative group">
+        <a href="#">Corporate Card</a>
+       
+    </li>
+    <li class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200
+    relative group">
+    <a href="#">Payroll</a>
+   
+</li>
+<li class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200
+relative group">
+<a href="#">Resources</a>
+<div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200"></div>
+</li>
+<li class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200
+relative group">
+<a href="#">Support</a>
+<div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200"></div>
+</li>
+<li class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200
+relative group">
+<a href="#">Pricing</a>
+<div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200"></div>
+</li>
+            </ul>
+
+            <div class="flex space-x-6">
+                <img 
+                    src="/assets/flag-DG8PNWGd.svg"
+                    width="28px"
+                    height="20px"
+                    />
+
+                    <button class="py-3 px-5 font-mullish text-white border-lightBlue border rounded-sm text-sm font-bold">Log in</button>
+                    <button class="py-3 px-4 font-mullish rounded-sm text-sm font-bold bg-white text-lightBlue300 border
+                     transition-all duration-200 hover:text-lightBlue500">Sign Up</button>
+            </div>
+        </div>
+
+    </nav>
+
+    <!--Hero section-->
+
+    <section
+    class="relative bg-deepBlue">
+    <div class="w-10/12 max-w-[1080px] flex flex-row justify-between items-center mx-auto ">
+        <!--left part-->
+        <div class="space-y-8">
+            <h1 class="font-mullish font-bold text-[40px] leading-[1,2] text-white">Power your finance, grow your business</h1>
+            <div class="w-6 h-1 bg-greenLight"></div>
+            <p class="font-mullish text-[18px] leading-7 text-white opacity-70">Accept payments from customers. Automate payouts to vendors & 
+                employees. Never run out of working capital.</p>
+            <button class="bg-lightBlue text-white rounded-md font-mullish font-bold hover:bg-lightBlue 
+            transition-all duration-200 padding py-[18px] px-[11px]">Sign up now</button>
+        </div>
+        <!--right part-->
+        <img src="/assets/hero-illustration-CxSzr_zN.jpg" alt=""
+        class="w-full max-w-[680px]">
+    </div>
+
+    <!--shape part-->
+    <div class="w-[103%] absolute left-0 right-0">
+        <img src="data:image/svg+xml,%3csvg%20viewBox='0%200%201446%20199'%20focusable='false'%20class='chakra-icon%20css-1w3t3sf'%20xmlns='http://www.w3.org/2000/svg'%20preserveAspectRatio='none'%20%3e%3cpath%20d='M%20-6%2068.5%20V%200%20H%201445%20V%2091%20L%201289%20170%20L%20-6%2068.5%20Z'%20fill='%2302042B'%20%3e%3c/path%3e%3c/svg%3e" alt=""
+        class="w-full object-fill">
+    </div>
+
+    </section>
+
+    <!--feature section 1-->
+    <section class="relative mt-[190px] overflow-hidden">
+        <img src="data:image/png;base64,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" alt="" 
+        loading="lazy" width="233" height="167"
+        class="absolute -top-[8rem] left-[10rem]">
+        <img src="data:image/png;base64,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" alt="" loading="lazy" width="233" height="167"
+        class="absolute top-[3rem] right-0 inline-block rotate-180">
+
+        <div class="relative w-11/12 max-w-[1080px] mx-auto pt-4">
+            <!--heading-->
+            <h2 class="font-mullish text-center text-2xl leading-[1.2] font-extrabold">Accept Payments with Razorpay Payment Suite</h2>
+            <div class="w-6 h-1 bg-greenLight mx-auto mt-4 mb-6"></div>
+
+            <!--content box-->
+            <div class="w-full min-h[520px] bg-white flex rounded-md relative p-10 py-12 border">
+            <!--left section-->  
+            <div class="flex flex-col justify-between w-full space-y-8">  
+                <h3 class="font-mullish text-xl leading-10 font-bold max-w-[500px]">
+                    Supercharge your business with all powerful
+                    <span class="text-lightBlue">Payment Gateway</span>
+                </h3>
+                <ul class="space-y-2">
+                    <li class="font-mullish flex items-center space-x-2">
+                        <i data-feather="check" class="text-greenLight"></i>
+                        <span>100+ Payment Methods</span>
+                    </li>
+                    <li class="font-mullish flex items-center space-x-2" >
+                        <i data-feather="check" class="text-greenLight"></i>
+                        <span>Industry Leading Success Rate</span>
+                    </li>
+                    <li class="font-mullish flex items-center space-x-2">
+                        <i data-feather="check" class="text-greenLight"></i>
+                        <span>Superior Checkout Experienc</span>
+                    </li>
+                    <li class="font-mullish flex items-center space-x-2">
+                        <i data-feather="check" class="text-greenLight"></i>
+                        <span>Easy to Integrate</span>
+                    </li>
+                    <li class="font-mullish flex items-center space-x-2">
+                        <i data-feather="check" class="text-greenLight"></i>
+                        <span>Instant Settlements from day 1</span>
+                    </li>
+                    <li class="font-mullish flex items-center space-x-2">
+                        <i data-feather="check" class="text-greenLight"></i>
+                        <span>In-depth Reporting and Insights</span>
+                    </li>
+                </ul>
+
+                <!--for button and hyperlink-->
+                <div class="flex flex-row items-center space-x-4 space-y-4">
+                    <button
+                    class="bg-lightBlue w-fit text-white py-[14px] px-[18px] rounded-md font-mullish font-bold
+                    hover:bg-lightBlue500 translate-all duration-200">Sign Up Now</button>
+                    <!--hyperlink-->
+                    <div class="flex items-center cursor-pointer group">
+                        <a href="#"
+                        class="font-mullish font-bold text-lightBlue500
+                        group-hover:text-grayBlue transition-all duration-200">Know More</a>
+                        <i
+                        data-feather="chevron-right"
+                        class="w-5 h-5 text-lightBlue500 
+                        group-hover:text-grayBlue transition-all duration-200"></i>
+                    </div>
+                </div>
+            </div>
+            <img src="/assets/payment-suite-fhKuLaJR.png" alt=""
+            class="max-w-[600px] absolute right-0 bottom-0">
+        </div>
+    
+
+    <div class="w-full grid grid-cols-3 gap-4 mt-10">
+     <!--Box 1-->
+     <div class="w-full min-h-[15rem] relative cursor-pointer">
+        <img src="/assets/payment-link-icon-DxqCdkQn.svg" alt=""
+        class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[8]
+        transition-all duration-200">
+
+        <!--Box shape-->
+        <svg
+           viewBox="0 0 340.32501220703125 225"
+           xmlns="http://www.w3.org//2000/svg"
+           preserveAspectRatio="none"
+           class="stroke-1 stroke-[#818597] h-full w-full absolute z-[90] transition-all duration-200"
+           style="stroke-opacity: 0.15"
+           >
+           <path
+               d="m 0 6
+           a 6 6 0 0 1 6 -6 
+           h 250.32501220703125
+           a 16 16 0 0 0 1 11 5
+           l 77 77
+           a 16 16 0 0 1 5 11
+           v 126
+           a 6 6 0 0 1 -6 6
+           h -337.32501220703125
+           a 6 6 0 0 1 -6 -6 
+           z"
+              fill="#fff"
+              ></path>      
+        </svg>
+
+        <!--box content-->
+        <div class="z-[100] absolute  w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
+            <!--text part-->
+            <div>
+                <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Links</h3>
+                <p class="font-mullish text-grayText mt-6">
+                    Share payment link via an email, SMS, messenger, chatbot etc. and get paid immediately</p>
+            </div>
+
+            <!--hyperlink know more-->
+            <div class="flex items-center cursor-pointer group">
+                <a href="#"
+                class="font-mullish font-bold text-lightBlue500
+                group-hover:text-grayBlue transition-all duration-200">Know More</a>
+                <i
+                data-feather="chevron-right"
+                class="w-5 h-5 text-lightBlue500 
+                group-hover:text-grayBlue transition-all duration-200"></i>
+            </div>
+        </div>
+     </div>
+
+     <!--Box2-->
+     <div class="w-full min-h-[15rem] relative cursor-pointer">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='33'%20height='32'%20viewBox='0%200%2033%2032'%20fill='none'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M18.2099%2012.5259H10.0695V18.3478L18.2099%2018.3478L18.2099%2012.5259ZM10.0695%2010.7997C9.11612%2010.7997%208.34326%2011.5725%208.34326%2012.5259V18.3478C8.34326%2019.3011%209.11612%2020.074%2010.0695%2020.074H18.2099C19.1633%2020.074%2019.9362%2019.3011%2019.9362%2018.3478V12.5259C19.9362%2011.5725%2019.1633%2010.7997%2018.2099%2010.7997H10.0695Z'%20fill='white'/%3e%3cpath%20d='M15.8226%2016.5962C15.8226%2017.2364%2015.3161%2017.7555%2014.6913%2017.7555C14.0665%2017.7555%2013.5601%2017.2364%2013.5601%2016.5962C13.5601%2015.9559%2014.0665%2015.4369%2014.6913%2015.4369C15.3161%2015.4369%2015.8226%2015.9559%2015.8226%2016.5962Z'%20fill='white'/%3e%3cpath%20d='M17.2137%2016.5964C17.2137%2017.2366%2016.7072%2017.7557%2016.0824%2017.7557C15.4577%2017.7557%2014.9512%2017.2366%2014.9512%2016.5964C14.9512%2015.9561%2015.4577%2015.4371%2016.0824%2015.4371C16.7072%2015.4371%2017.2137%2015.9561%2017.2137%2016.5964Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M19.6658%2012.4201C19.6702%2012.4698%2019.6725%2012.5202%2019.6725%2012.571V13.9906H20.3825C20.9679%2013.9906%2021.4425%2013.6109%2021.4425%2013.1426C21.4425%2012.6742%2020.9679%2012.2946%2020.3825%2012.2946H19.6499C19.6567%2012.3359%2019.6621%2012.3778%2019.6658%2012.4201Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M23.3152%2019.3813L21.4338%2019.3809C21.423%2019.3809%2021.4122%2019.381%2021.4014%2019.3813C21.4122%2019.381%2021.423%2019.3809%2021.4338%2019.3809L21.4338%2019.3813L23.3152%2019.3813ZM10.4074%2022.0945V19.9328H10.66V22.0945C10.66%2022.6277%2011.1048%2023.0716%2011.6622%2023.0716H19.9245L19.9245%2023.0689V20.6093C19.9245%2019.7831%2020.6055%2019.1283%2021.4338%2019.1283H21.6864L23.3152%2019.1287C23.395%2019.1287%2023.472%2019.1427%2023.5435%2019.1683V8.97699C23.5435%208.44405%2023.1002%208.00232%2022.5404%208.00232H10.66V10.8874H10.4074L10.4074%207.74978V11.0141H10.0269C9.86889%2011.0141%209.71593%2011.0358%209.5709%2011.0766L9.5709%2010.9564C9.48355%2010.9823%209.39916%2011.015%209.31836%2011.0541V6.67749H22.5404C23.8299%206.67749%2024.8851%207.70146%2024.8851%208.97699V21.2341L24.6956%2021.4269L21.976%2024.1949L21.7781%2024.396H11.6622C10.3731%2024.396%209.31836%2023.3683%209.31836%2022.0941V19.7662C9.39916%2019.8052%209.48355%2019.8379%209.5709%2019.8638L9.5709%2019.9969C9.71593%2020.0376%209.86889%2020.0594%2010.0269%2020.0594H10.4074L10.4074%2022.0945ZM23.801%2021.9771L24.6237%2021.1398L24.5154%2021.25L23.801%2021.9771ZM22.5404%206.93003H9.5709V6.93004H9.98917L22.5404%206.93003ZM23.3152%2020.4532C23.395%2020.4532%2023.472%2020.4392%2023.5435%2020.4136V20.6968L21.2665%2023.0146V20.6093C21.2665%2020.528%2021.3334%2020.4532%2021.4338%2020.4532H23.3152Z'%20fill='white'/%3e%3c/svg%3e" alt=""
+        class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[8]
+        transition-all duration-200">
+
+        <!--Box shape-->
+        <svg
+           viewBox="0 0 340.32501220703125 225"
+           xmlns="http://www.w3.org//2000/svg"
+           preserveAspectRatio="none"
+           class="stroke-1 stroke-[#818597] h-full w-full absolute z-[90] transition-all duration-200"
+           style="stroke-opacity: 0.15"
+           >
+           <path
+               d="m 0 6
+           a 6 6 0 0 1 6 -6 
+           h 250.32501220703125
+           a 16 16 0 0 0 1 11 5
+           l 77 77
+           a 16 16 0 0 1 5 11
+           v 126
+           a 6 6 0 0 1 -6 6
+           h -337.32501220703125
+           a 6 6 0 0 1 -6 -6 
+           z"
+              fill="#fff"
+              ></path>      
+        </svg>
+
+        <!--box content-->
+        <div class="z-[100] absolute  w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
+            <!--text part-->
+            <div>
+                <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Pages</h3>
+                <p class="font-mullish text-grayText mt-6">
+                    Take your store online instantly with zero coding. Accept international & domestic payments</p>
+            </div>
+
+            <!--hyperlink know more-->
+            <div class="flex items-center cursor-pointer group">
+                <a href="#"
+                class="font-mullish font-bold text-lightBlue500
+                group-hover:text-grayBlue transition-all duration-200">Know More</a>
+                <i
+                data-feather="chevron-right"
+                class="w-5 h-5 text-lightBlue500 
+                group-hover:text-grayBlue transition-all duration-200"></i>
+            </div>
+        </div>
+     </div>
+     <!--Box3-->
+     <div class="w-full min-h-[15rem] relative cursor-pointer">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='44'%20height='44'%20viewBox='0%200%2044%2044'%20fill='none'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M14.0933%2017.875C14.0933%2014.2679%2017.0175%2011.3438%2020.6246%2011.3438H30.2496C33.8567%2011.3438%2036.7808%2014.2679%2036.7808%2017.875C36.7808%2021.4821%2033.8567%2024.4062%2030.2496%2024.4062H20.6246C17.0175%2024.4062%2014.0933%2021.4821%2014.0933%2017.875ZM20.6246%2013.4062C18.1566%2013.4062%2016.1558%2015.407%2016.1558%2017.875C16.1558%2020.343%2018.1566%2022.3438%2020.6246%2022.3438H30.2496C32.7176%2022.3438%2034.7183%2020.343%2034.7183%2017.875C34.7183%2015.407%2032.7176%2013.4062%2030.2496%2013.4062H20.6246Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M15.7001%2018.2188H15.1246C11.5175%2018.2188%208.59332%2021.1429%208.59332%2024.75C8.59332%2028.3571%2011.5175%2031.2812%2015.1246%2031.2812H24.7496C28.3567%2031.2812%2031.2808%2028.3571%2031.2808%2024.75C31.2808%2024.2892%2031.2331%2023.8395%2031.1423%2023.4056C30.8924%2023.4529%2030.6345%2023.4776%2030.3708%2023.4776H29.0346C29.1541%2023.8809%2029.2183%2024.3079%2029.2183%2024.75C29.2183%2027.218%2027.2176%2029.2188%2024.7496%2029.2188H15.1246C12.6566%2029.2188%2010.6558%2027.218%2010.6558%2024.75C10.6558%2022.282%2012.6566%2020.2812%2015.1246%2020.2812H15.805C15.7364%2019.9828%2015.7001%2019.6719%2015.7001%2019.3526V18.2188Z'%20fill='white'/%3e%3c/svg%3e" alt=""
+        class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[8]
+        transition-all duration-200">
+
+        <!--Box shape-->
+        <svg
+           viewBox="0 0 340.32501220703125 225"
+           xmlns="http://www.w3.org//2000/svg"
+           preserveAspectRatio="none"
+           class="stroke-1 stroke-[#818597] h-full w-full absolute z-[90] transition-all duration-200"
+           style="stroke-opacity: 0.15"
+           >
+           <path
+               d="m 0 6
+           a 6 6 0 0 1 6 -6 
+           h 250.32501220703125
+           a 16 16 0 0 0 1 11 5
+           l 77 77
+           a 16 16 0 0 1 5 11
+           v 126
+           a 6 6 0 0 1 -6 6
+           h -337.32501220703125
+           a 6 6 0 0 1 -6 -6 
+           z"
+              fill="#fff"
+              ></path>      
+        </svg>
+
+        <!--box content-->
+        <div class="z-[100] absolute  w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
+            <!--text part-->
+            <div>
+                <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Buttons</h3>
+                <p class="font-mullish text-grayText mt-6">
+                    Create, Copy & Collect With Payment Button. Collect one time or subscription payments & more</p>
+            </div>
+
+            <!--hyperlink know more-->
+            <div class="flex items-center cursor-pointer group">
+                <a href="#"
+                class="font-mullish font-bold text-lightBlue500
+                group-hover:text-grayBlue transition-all duration-200">Know More</a>
+                <i
+                data-feather="chevron-right"
+                class="w-5 h-5 text-lightBlue500 
+                group-hover:text-grayBlue transition-all duration-200"></i>
+            </div>
+        </div>
+     </div>
+     <!--Box4-->
+     <div class="w-full min-h-[15rem] relative cursor-pointer">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='33'%20height='32'%20viewBox='0%200%2033%2032'%20fill='none'%3e%3cpath%20d='M24.6789%2011.2693L23.7377%2012.0221C24.2826%2013.0625%2025.0301%2013.9607%2025.0301%2016.8686C24.3839%2022.2868%2020.406%2025.269%2016.3065%2025.269V23.0074L12.7524%2025.5921L16.3064%2028.5V26.4537C21.7807%2026.4537%2026.2146%2022.0197%2026.2146%2016.5454C26.2146%2014.6009%2025.6449%2012.7927%2024.6789%2011.2693Z'%20fill='white'%20stroke='white'%20stroke-width='0.4'/%3e%3cpath%20d='M8.56171%2022.3802L9.46633%2021.5838C8.8729%2020.5703%208.08393%2019.7083%207.94674%2016.8037C7.81064%2011.6348%2012.1693%208.19442%2016.2643%208.00101L16.371%2010.2602L19.7991%207.5106L16.112%204.77365L16.2085%206.81767C10.7403%207.07594%206.52046%2011.7141%206.77873%2017.1823C6.87046%2019.1247%207.52486%2020.904%208.56171%2022.3802Z'%20fill='white'%20stroke='white'%20stroke-width='0.4'/%3e%3cpath%20d='M18.0123%2013.488C18.1784%2013.7561%2018.2923%2014.0868%2018.3538%2014.48H19.2308V15.5525H18.4C18.3569%2016.196%2018.1938%2016.7277%2017.9107%2017.1478C17.6338%2017.5678%2017.2676%2017.8404%2016.8122%2017.9655C16.9968%2018.0281%2017.163%2018.1398%2017.3107%2018.3007C17.4584%2018.4616%2017.5969%2018.6895%2017.7261%2018.9844L19.1015%2021.9605H17.6799L16.2953%2018.9174C16.1722%2018.6314%2016.0399%2018.4303%2015.8983%2018.3141C15.7629%2018.189%2015.5814%2018.1264%2015.3537%2018.1264H14.0244V16.7724H15.9906C16.3476%2016.7724%2016.6307%2016.6696%2016.8399%2016.4641C17.0491%2016.2585%2017.1784%2015.9547%2017.2276%2015.5525H14.0244V14.48H17.1907C17.123%2014.1493%2016.9876%2013.9036%2016.7845%2013.7427C16.5814%2013.5729%2016.3168%2013.488%2015.9906%2013.488H14.0244V12.4155H19.2308V13.488H18.0123Z'%20fill='white'/%3e%3c/svg%3e" alt=""
+        class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[8]
+        transition-all duration-200">
+
+        <!--Box shape-->
+        <svg
+           viewBox="0 0 340.32501220703125 225"
+           xmlns="http://www.w3.org//2000/svg"
+           preserveAspectRatio="none"
+           class="stroke-1 stroke-[#818597] h-full w-full absolute z-[90] transition-all duration-200"
+           style="stroke-opacity: 0.15"
+           >
+           <path
+               d="m 0 6
+           a 6 6 0 0 1 6 -6 
+           h 250.32501220703125
+           a 16 16 0 0 0 1 11 5
+           l 77 77
+           a 16 16 0 0 1 5 11
+           v 126
+           a 6 6 0 0 1 -6 6
+           h -337.32501220703125
+           a 6 6 0 0 1 -6 -6 
+           z"
+              fill="#fff"
+              ></path>      
+        </svg>
+
+        <!--box content-->
+        <div class="z-[100] absolute  w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
+            <!--text part-->
+            <div>
+                <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Subscriptions</h3>
+                <p class="font-mullish text-grayText mt-6">
+                    Subscription plans with automated recurring transactions on various payment modes.</p>
+            </div>
+
+            <!--hyperlink know more-->
+            <div class="flex items-center cursor-pointer group">
+                <a href="#"
+                class="font-mullish font-bold text-lightBlue500
+                group-hover:text-grayBlue transition-all duration-200">Know More</a>
+                <i
+                data-feather="chevron-right"
+                class="w-5 h-5 text-lightBlue500 
+                group-hover:text-grayBlue transition-all duration-200"></i>
+            </div>
+        </div>
+     </div>
+     <!--Box5-->
+     <div class="w-full min-h-[15rem] relative cursor-pointer">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='33'%20height='32'%20viewBox='0%200%2033%2032'%20fill='none'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M22.1605%2013.4783C21.7061%2013.4783%2021.3925%2013.8495%2021.3413%2014.2975C21.0213%2016.9855%2019.5877%2017.7215%2018.2181%2018.1439C17.9685%2018.2207%2017.5845%2018.3935%2017.5845%2018.5279V15.7567C17.5845%2015.7247%2017.5845%2015.6927%2017.5845%2015.6543V8.67832C17.5845%208.22392%2017.0981%207.85912%2016.6437%207.85912C16.1893%207.85912%2015.7029%208.22392%2015.7029%208.67832V13.3951C15.7029%2013.2607%2015.2741%2013.1391%2015.0373%2013.0111C13.4629%2012.1855%2011.8565%2011.4431%2011.8565%208.67192C11.8565%208.21752%2011.4981%207.85272%2011.0501%207.85272C10.5957%207.85272%2010.2373%208.21752%2010.2373%208.67192C10.2373%2012.4415%2012.6501%2013.7279%2014.2757%2014.5791C15.1653%2015.0463%2015.7029%2015.3535%2015.7029%2015.7311V24.1471C15.7029%2024.6015%2016.1893%2024.9663%2016.6437%2024.9663C17.0981%2024.9663%2017.5845%2024.6015%2017.5845%2024.1471V21.3823C17.5845%2020.9919%2018.0645%2020.6783%2018.9797%2020.2047C20.6053%2019.3535%2023.0245%2018.0671%2023.0245%2014.2975C23.0181%2013.8495%2022.6149%2013.4783%2022.1605%2013.4783Z'%20fill='white'/%3e%3c/svg%3e" alt=""
+        class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[8]
+        transition-all duration-200">
+
+        <!--Box shape-->
+        <svg
+           viewBox="0 0 340.32501220703125 225"
+           xmlns="http://www.w3.org//2000/svg"
+           preserveAspectRatio="none"
+           class="stroke-1 stroke-[#818597] h-full w-full absolute z-[90] transition-all duration-200"
+           style="stroke-opacity: 0.15"
+           >
+           <path
+               d="m 0 6
+           a 6 6 0 0 1 6 -6 
+           h 250.32501220703125
+           a 16 16 0 0 0 1 11 5
+           l 77 77
+           a 16 16 0 0 1 5 11
+           v 126
+           a 6 6 0 0 1 -6 6
+           h -337.32501220703125
+           a 6 6 0 0 1 -6 -6 
+           z"
+              fill="#fff"
+              ></path>      
+        </svg>
+
+        <!--box content-->
+        <div class="z-[100] absolute  w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
+            <!--text part-->
+            <div>
+                <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Route</h3>
+                <p class="font-mullish text-grayText mt-6">
+Split incoming payments auto- matically to vendor’s accounts, manage marketplace money flow...</p>
+            </div>
+
+            <!--hyperlink know more-->
+            <div class="flex items-center cursor-pointer group">
+                <a href="#"
+                class="font-mullish font-bold text-lightBlue500
+                group-hover:text-grayBlue transition-all duration-200">Know More</a>
+                <i
+                data-feather="chevron-right"
+                class="w-5 h-5 text-lightBlue500 
+                group-hover:text-grayBlue transition-all duration-200"></i>
+            </div>
+        </div>
+     </div>
+     <!--Box6-->
+      <div class="w-full min-h-[15rem] relative cursor-pointer">
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M15.619%2017.891L14.211%2016.483C13.9166%2016.1886%2013.9166%2015.7022%2014.211%2015.4078C14.5054%2015.1134%2014.9918%2015.1134%2015.2862%2015.4078L16.0734%2016.195L18.0574%2014.211C18.3518%2013.9166%2018.8382%2013.9166%2019.1326%2014.211C19.427%2014.5054%2019.427%2014.9918%2019.1326%2015.2862L16.5278%2017.891C16.2718%2018.1406%2015.8686%2018.1406%2015.619%2017.891Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M16.4938%2024.7408C16.3978%2024.7408%2016.3018%2024.7216%2016.2058%2024.6896C8.82019%2022.1296%208.93539%2016.1008%209.01859%2011.6976C9.02499%2011.2368%209.03779%2010.7952%209.03779%2010.3728C9.03779%209.8928%209.42819%209.5024%209.90819%209.5024C12.4426%209.5024%2014.2858%208.8112%2015.8858%207.2496C16.225%206.9168%2016.7626%206.9168%2017.1018%207.2496C18.7018%208.8048%2020.545%209.5024%2023.0794%209.5024C23.5594%209.5024%2023.9498%209.8928%2023.9498%2010.3728C23.9498%2010.7952%2023.9562%2011.2304%2023.969%2011.6976C24.0522%2016.1008%2024.1674%2022.1296%2016.7818%2024.6896C16.6858%2024.728%2016.5898%2024.7408%2016.4938%2024.7408ZM10.7722%2011.2304L10.7658%2011.7424C10.6826%2015.9728%2010.593%2020.7536%2016.4938%2022.9488C22.3946%2020.7536%2022.305%2015.9664%2022.2218%2011.7424L22.2154%2011.2304C19.9434%2011.0896%2018.0938%2010.392%2016.4938%209.0608C14.8938%2010.3856%2013.0442%2011.0896%2010.7722%2011.2304Z'%20fill='white'/%3e%3c/svg%3e" alt=""
+        class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[8]
+        transition-all duration-200">
+
+        <!--Box shape-->
+        <svg
+           viewBox="0 0 340.32501220703125 225"
+           xmlns="http://www.w3.org//2000/svg"
+           preserveAspectRatio="none"
+           class="stroke-1 stroke-[#818597] h-full w-full absolute z-[90] transition-all duration-200"
+           style="stroke-opacity: 0.15"
+           >
+           <path
+               d="m 0 6
+           a 6 6 0 0 1 6 -6 
+           h 250.32501220703125
+           a 16 16 0 0 0 1 11 5
+           l 77 77
+           a 16 16 0 0 1 5 11
+           v 126
+           a 6 6 0 0 1 -6 6
+           h -337.32501220703125
+           a 6 6 0 0 1 -6 -6 
+           z"
+              fill="#fff"
+              ></path>      
+        </svg>
+
+        <!--box content-->
+        <div class="z-[100] absolute  w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
+            <!--text part-->
+            <div>
+                <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Smart Collect</h3>
+                <p class="font-mullish text-grayText mt-6">
+                    Automatically reconcile incoming NEFT, RTGS, IMPS, UPI payments using Virtual Accounts & UPI-IDs </p>
+            </div>
+
+            <!--hyperlink know more-->
+            <div class="flex items-center cursor-pointer group">
+                <a href="#"
+                class="font-mullish font-bold text-lightBlue500
+                group-hover:text-grayBlue transition-all duration-200">Know More</a>
+                <i
+                data-feather="chevron-right"
+                class="w-5 h-5 text-lightBlue500 
+                group-hover:text-grayBlue transition-all duration-200"></i>
+            </div>
+        </div>
+     </div>
+
+    </div>
+</div>
+
+    </section>
+
+    <!--feature section 2-->
+    <section
+    class="bg-[url(./images/feature-section-2BG.svg)] bg-no-repeat bg-cover
+     pt-[10rem] pb-[350px] mt-14">
+    
+        <div>
+
+           <h2 class="font-mullish text-center text-2xl leading-[1.2] text-white font-bold">Explore Razorpay Business Banking</h2>
+           <div class="w-6 h-1 bg-greenLight mx-auto mt-4 mb-6"></div>
+    <!--main feature box-->
+    <div class="w-full min-h[440px] flex flex-col relative">
+         <img src="/assets/x-flame-1-BaK-peT9.png" alt=""
+         class="absolute -top-[142px] -left-[140px] w-[200px]">
+         <img src="/assets/x-flame-2-Bluv15sW.png" alt=""
+         class="absolute -top-[150px] -right-[180px] w-[200px]">
+
+       <!--content box-->
+   <div class="relative w-full bg-[#181c2e] p-10 py-12 border border-slate-700 z-20 rounded-md">
+    <!--left part-->
+    <div class="flex flex-col justify-between items-start h-full w-full gap-12 z-20">
+    <h3 class="font-mullish text-[28px] text-white font-bold leading-10 max-w-[500px]"
+    >Manage your company's finances with
+        <img src="/assets/razorpayX-B7ybGl8c.svg" alt=""
+        width="168px"
+        height="32px"
+        class="inline">
+        <span class="text-greenLight">Business Banking</span>
+    </h3>
+    <ul class="space-y-2">
+        <li class="font-mullish text-white flex items-center space-x-2">
+            <i data-feather="check" class="text-greenLight"></i>
+            <span>Open a fully digital current account
+            </span>
+        </li>
+        <li class="font-mullish text-white flex items-center space-x-2">
+            <i data-feather="check" class="text-greenLight"></i>
+            <span>Automate payables & compliment payments
+            </span>
+        </li>
+        <li class="font-mullish text-white flex items-center space-x-2">
+            <i data-feather="check" class="text-greenLight"></i>
+            <span>Simplify and track spends with Corporate cards
+            </span>
+        </li>
+        <li class="font-mullish text-white flex items-center space-x-2">
+            <i data-feather="check" class="text-greenLight"></i>
+            <span>View financial insights at a glance
+            </span>
+        </li>
+    </ul>
+   <div class="flex flex-row w-full items-center space-x-4">
+    <button class="relative bg-lightBlue flex items-center
+justify-start text-white py-[14px] px-[18px]nmd:pr-[90px] rounded-md 
+font-mullish font-bold hover:bg-lightBlue500 transition-all duration-200">
+        Sign Up
+        <div class="w-12 h-[60px] bg-greenLight absolute right-6 skew-x-[20deg] flex justify-center items-center">
+            <svg
+            viewBox="0 0 24 24"
+            focusable="false"
+            class="w-[20px] h-[20px] -skew-x-[20deg]"
+            >
+        <path
+         fill="currentColor"
+         d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+         ></path>
+    </svg>
+        </div>
+    </button>
+    <!--hyperlink wala-->
+    <div class="flex flex-row items-center cursor-pointer group">
+        <a href="#"
+        class="font-mullish font-bold text-lightBlue500 group-hover:text-lightBlue
+        transition-all duration-200"
+        >Know More</a>
+        <i
+        data-feather="chevron-right"
+        class="w-5 h-5 text-lightBlue500 group-hover:text-lightBlue transition-all duration-200"></i>
+    </div>
+  </div>
+</div>
+<!--background imager for content box-->
+<img src="/assets/buisness-banking-Z1x0UUMF.png" alt=""
+class="max-w-[600px] absolute right-0 bottom-0 z-4">
+    
+    </div>
+
+    <!--card box-->
+     <div class="grid grid-cols-3 w-full gap-4 my-14">
+        <!--box1-->
+        <div 
+        class="w-full min-h-[15rem] relative cursor-pointe featureCard2">
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='33'%20height='32'%20viewBox='0%200%2033%2032'%20fill='none'%3e%3cpath%20d='M11.0876%2016.7956C11.0876%2016.6143%2011.1597%2016.4404%2011.2879%2016.3122C11.4161%2016.184%2011.59%2016.1119%2011.7713%2016.1119C11.9526%2016.1119%2012.1265%2016.184%2012.2547%2016.3122C12.3829%2016.4404%2012.4549%2016.6143%2012.4549%2016.7956V20.8973C12.4549%2021.0786%2012.3829%2021.2525%2012.2547%2021.3807C12.1265%2021.5089%2011.9526%2021.581%2011.7713%2021.581C11.59%2021.581%2011.4161%2021.5089%2011.2879%2021.3807C11.1597%2021.2525%2011.0876%2021.0786%2011.0876%2020.8973V16.7956Z'%20fill='white'%20stroke='white'%20stroke-width='0.5'/%3e%3cpath%20d='M15.1897%2016.7956C15.1897%2016.6143%2015.2617%2016.4404%2015.3899%2016.3122C15.5181%2016.184%2015.692%2016.1119%2015.8733%2016.1119C16.0546%2016.1119%2016.2285%2016.184%2016.3567%2016.3122C16.4849%2016.4404%2016.557%2016.6143%2016.557%2016.7956V20.8973C16.557%2021.0786%2016.4849%2021.2525%2016.3567%2021.3807C16.2285%2021.5089%2016.0546%2021.581%2015.8733%2021.581C15.692%2021.581%2015.5181%2021.5089%2015.3899%2021.3807C15.2617%2021.2525%2015.1897%2021.0786%2015.1897%2020.8973V16.7956Z'%20fill='white'%20stroke='white'%20stroke-width='0.5'/%3e%3cpath%20d='M19.2913%2016.7956C19.2913%2016.6143%2019.3633%2016.4404%2019.4915%2016.3122C19.6197%2016.184%2019.7936%2016.1119%2019.9749%2016.1119C20.1562%2016.1119%2020.3301%2016.184%2020.4583%2016.3122C20.5865%2016.4404%2020.6585%2016.6143%2020.6585%2016.7956V20.8973C20.6585%2021.0786%2020.5865%2021.2525%2020.4583%2021.3807C20.3301%2021.5089%2020.1562%2021.581%2019.9749%2021.581C19.7936%2021.581%2019.6197%2021.5089%2019.4915%2021.3807C19.3633%2021.2525%2019.2913%2021.0786%2019.2913%2020.8973V16.7956Z'%20fill='white'%20stroke='white'%20stroke-width='0.5'/%3e%3cpath%20d='M9.03685%2023.9982C8.92912%2023.9982%208.82244%2023.977%208.72291%2023.9358C8.62338%2023.8945%208.53295%2023.8341%208.45677%2023.7579C8.38059%2023.6818%208.32017%2023.5913%208.27894%2023.4918C8.23771%2023.3923%208.21649%2023.2856%208.21649%2023.1779C8.21649%2023.0701%208.23771%2022.9635%208.27894%2022.8639C8.32017%2022.7644%208.38059%2022.674%208.45677%2022.5978C8.53295%2022.5216%208.62338%2022.4612%208.72291%2022.42C8.82244%2022.3787%208.92912%2022.3575%209.03685%2022.3575H23.393C23.5007%2022.3575%2023.6074%2022.3787%2023.7069%2022.42C23.8065%2022.4612%2023.8969%2022.5216%2023.9731%2022.5978C24.0493%2022.674%2024.1097%2022.7644%2024.1509%2022.8639C24.1921%2022.9635%2024.2134%2023.0701%2024.2134%2023.1779C24.2134%2023.2856%2024.1921%2023.3923%2024.1509%2023.4918C24.1097%2023.5913%2024.0493%2023.6818%2023.9731%2023.7579C23.8969%2023.8341%2023.8065%2023.8945%2023.7069%2023.9358C23.6074%2023.977%2023.5007%2023.9982%2023.393%2023.9982H9.03685ZM9.03685%2015.1111C8.25136%2015.1111%207.91501%2014.1143%208.53985%2013.6385L15.7179%208.16952C15.8608%208.06074%2016.0354%208.00183%2016.2149%208.00183C16.3945%208.00183%2016.5691%208.06074%2016.7119%208.16952L23.89%2013.6385C24.5148%2014.1143%2024.1778%2015.1111%2023.393%2015.1111H9.03685ZM20.9627%2013.4704L16.2149%209.85329L11.4665%2013.4704H20.962H20.9627Z'%20fill='white'/%3e%3c/svg%3e" alt=""
+            class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[80] featureCardIcon
+            transition-all duration-200">
+    
+            <!--Box shape-->
+            <svg
+               viewBox="0 0 349.32501220703125 225"
+               xmlns="http://www.w3.org//2000/svg"
+               preserveAspectRatio="none"
+               class="stroke-1 stroke-[#818597] h-full w-full absolute z-[9] transition-all duration-200"
+               style="stroke-opacity: 0.15"
+               >
+               <path
+                   d="m 0 6
+               a 6 6 0 0 1 6 -6 
+               h 250.32501220703125
+               a 16 16 0 0 0 1 11 5
+               l 77 77
+               a 16 16 0 0 1 5 11
+               v 126
+               a 6 6 0 0 1 -6 6
+               h -337.32501220703125
+               a 6 6 0 0 1 -6 -6 
+               z"
+                  fill="#fff"
+                  ></path>      
+            </svg>
+    
+            <!--box content-->
+            <div class="z-[1000] absolute  w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
+                <!--text part-->
+                <div>
+                    <h3 class="font-mullish font-extrabold text-white leading-[1.2] text-[1.375rem]">Current Account</h3>
+                    <p class="font-mullish text-grayText mt-6">
+                        Current accounts for fast-growing businesses, supported by the best-in-class technology</p>
+                </div>
+    
+                <!--hyperlink know more-->
+                <div class="flex items-center cursor-pointer place-items-end">
+                    <a 
+                    href="#"
+                    class="font-mullish font-bold text-lightBlue500 transition-all duration-200">Know More</a>
+                    <i
+                    data-feather="chevron-right"
+                    class="w-5 h-5 text-lightBlue500 transition-all duration-200"></i>
+                </div>
+            </div>
+         </div>
+        <!--box2-->
+        <div class="w-full min-h-[15rem] relative cursor-pointer">
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='32'%20height='32'%20fill='none'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M16%200C7.1616%200%200%207.1616%200%2016s7.1616%2016%2016%2016%2016-7.1616%2016-16S24.8384%200%2016%200z'%20fill='url(%23paint0_linear)'/%3e%3cpath%20d='M19%208c-4.42%200-8%203.58-8%208s3.58%208%208%208%208-3.58%208-8-3.58-8-8-8zm0%2014c-3.31%200-6-2.69-6-6s2.69-6%206-6%206%202.69%206%206-2.69%206-6%206zM7%2016c0-2.39%201.4-4.46%203.43-5.42.34-.16.57-.47.57-.84v-.19c0-.68-.71-1.11-1.32-.82C6.92%209.99%205%2012.77%205%2016c0%203.23%201.92%206.01%204.68%207.27.61.28%201.32-.14%201.32-.82v-.18c0-.37-.23-.69-.57-.85C8.4%2020.46%207%2018.39%207%2016z'%20fill='%23fff'/%3e%3c/svg%3e" alt=""
+            class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[8]
+            transition-all duration-200">
+    
+            <!--Box shape-->
+            <svg
+               viewBox="0 0 340.32501220703125 225"
+               xmlns="http://www.w3.org//2000/svg"
+               preserveAspectRatio="none"
+               class="stroke-1 stroke-[#818597] h-full w-full absolute z-[90] transition-all duration-200"
+               style="stroke-opacity: 0.15"
+               >
+               <path
+                   d="m 0 6
+               a 6 6 0 0 1 6 -6 
+               h 250.32501220703125
+               a 16 16 0 0 0 1 11 5
+               l 77 77
+               a 16 16 0 0 1 5 11
+               v 126
+               a 6 6 0 0 1 -6 6
+               h -337.32501220703125
+               a 6 6 0 0 1 -6 -6 
+               z"
+                  fill="#fff"
+                  ></path>      
+            </svg>
+    
+            <!--box content-->
+            <div class="z-[100] absolute  w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
+                <!--text part-->
+                <div>
+                    <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Capital Credits</h3>
+                    <p class="font-mullish text-grayText mt-6">
+                        Instant additional cash and corporate cards designed for growing businesses</p>
+                </div>
+    
+                <!--hyperlink know more-->
+                <div class="flex items-center cursor-pointer place-items-end">
+                    <a 
+                    href="#"
+                    class="font-mullish font-bold text-lightBlue500 transition-all duration-200">Know More</a>
+                    <i
+                    data-feather="chevron-right"
+                    class="w-5 h-5 text-lightBlue500 transition-all duration-200"></i>
+                </div>
+            </div>
+         </div>
+        <!--box3-->
+        <div class="w-full min-h-[15rem] relative cursor-pointer">
+            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='33'%20height='32'%20viewBox='0%200%2033%2032'%20fill='none'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M14.387%2011.4708C14.387%2012.021%2014.8329%2012.4669%2015.3831%2012.4669L20.5902%2012.4669L20.5902%2017.6741C20.5902%2018.2242%2021.0362%2018.6702%2021.5863%2018.6702C22.1365%2018.6702%2022.5824%2018.2242%2022.5824%2017.6741L22.5824%2011.4708C22.5824%2010.9207%2022.1365%2010.4747%2021.5863%2010.4747L15.3831%2010.4747C14.8329%2010.4747%2014.387%2010.9207%2014.387%2011.4708Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M11.0855%2021.8609C11.5052%2022.2806%2012.1092%2022.357%2012.4345%2022.0316L21.5142%2012.9519C21.8396%2012.6266%2021.7632%2012.0226%2021.3435%2011.603C20.9238%2011.1833%2020.3199%2011.1069%2019.9945%2011.4322L10.9148%2020.5119C10.5894%2020.8373%2010.6659%2021.4412%2011.0855%2021.8609Z'%20fill='white'/%3e%3c/svg%3e" alt=""
+            class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[80]
+            transition-all duration-200">
+    
+            <!--Box shape-->
+            <svg
+               viewBox="0 0 340.32501220703125 225"
+               xmlns="http://www.w3.org//2000/svg"
+               preserveAspectRatio="none"
+               class="stroke-1 stroke-[#818597] h-full w-full absolute z-[90] transition-all duration-200"
+               style="stroke-opacity: 0.15"
+               >
+               <path
+                   d="m 0 6
+               a 6 6 0 0 1 6 -6 
+               h 250.32501220703125
+               a 16 16 0 0 0 1 11 5
+               l 77 77
+               a 16 16 0 0 1 5 11
+               v 126
+               a 6 6 0 0 1 -6 6
+               h -337.32501220703125
+               a 6 6 0 0 1 -6 -6 
+               z"
+                  fill="#fff"
+                  ></path>      
+            </svg>
+    
+            <!--box content-->
+            <div class="z-[100] absolute  w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
+                <!--text part-->
+                <div>
+                    <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payouts</h3>
+                    <p class="font-mullish text-grayText mt-6">
+                        Make simple, reliable & secure payouts to bank accounts, UPI IDs or wallets</p>
+                </div>
+    
+                <!--hyperlink know more-->
+                <div class="flex items-center cursor-pointer place-items-end">
+                    <a 
+                    href="#"
+                    class="font-mullish font-bold text-lightBlue500 transition-all duration-200">Know More</a>
+                    <i
+                    data-feather="chevron-right"
+                    class="w-5 h-5 text-lightBlue500 transition-all duration-200"></i>
+                </div>
+            </div>
+         </div>
+     </div>
+  </div>
+</div>
+    </section>
+
+    <script>
+        feather.replace()
+    </script>
+</body>
+</html>
